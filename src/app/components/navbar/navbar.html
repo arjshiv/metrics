@@ -1,0 +1,16 @@
+<nav class="navbar navbar-static-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">
+        <span class="fa fa-database"></span> Metrics
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+      <ul class="nav navbar-nav">
+        <li ng-repeat="l in vm.AppInfo.possibleStates track by $index"
+            ng-class="{'active': $index === vm.AppInfo.currentState}"><a href="#">{{l.displayName}}</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
