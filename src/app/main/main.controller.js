@@ -7,7 +7,6 @@
 
   /** @ngInject */
   function MainController() {
-    var vm = this;
-    vm.url = 'url';
+    //hold logic for anything shared in the app, should the need arise
   }
 })();
