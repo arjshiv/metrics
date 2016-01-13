@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -11,7 +11,7 @@
       restrict: 'E',
       templateUrl: 'app/components/navbar/navbar.html',
       scope: {
-          creationDate: '='
+        creationDate: '='
       },
       controller: NavbarController,
       controllerAs: 'vm',
@@ -21,9 +21,19 @@
     return directive;
 
     /** @ngInject */
-    function NavbarController(AppInfo) {
+    function NavbarController($state, _) {
       var vm = this;
-      vm.AppInfo = AppInfo;
+      vm.states = _.chain($state.get())
+        .filter(function (s) {
+          return (s.hasOwnProperty('data') && s.data.hasOwnProperty('root') && !s.data.root);
+        })
+        .map(function(s) {
+          return {
+            displayName: s.data.displayName,
+            ref: s.name
+          }
+        })
+        .value();
     }
   }
 

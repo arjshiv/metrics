@@ -8,8 +8,8 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
       <ul class="nav navbar-nav">
-        <li ng-repeat="l in vm.AppInfo.possibleStates track by $index"
-            ng-class="{'active': $index === vm.AppInfo.currentState}"><a href="#">{{l.displayName}}</a></li>
+        <li ng-repeat="s in vm.states track by $index"
+            ui-sref-active="active"><a href="#" ui-sref="{{s.ref}}">{{s.displayName}}</a></li>
       </ul>
     </div>
   </div>
