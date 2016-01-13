@@ -33,7 +33,7 @@
         }
       })
       .state('main.users', {
-        url: '/users?candidateName',
+        url: '/candidates/:candidateName/users',
         templateUrl: 'app/main/user/user.html',
         controller: 'UserController',
         controllerAs: 'userController',
@@ -60,7 +60,7 @@
         }
       });
 
-    $urlRouterProvider.otherwise('/main.candidates');
+    $urlRouterProvider.otherwise('/main/candidates');
   }
 
 })();
