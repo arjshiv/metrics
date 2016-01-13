@@ -1,3 +1,4 @@
+/*https://gist.github.com/wilsonwc/8358542*/
 angular.module('stateMock',[]);
 angular.module('stateMock').service("$state", function($q){
   this.expectedTransitions = [];
