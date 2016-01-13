@@ -33,13 +33,20 @@
         }
       })
       .state('main.users', {
-        url: '/users',
+        url: '/users?candidateName',
         templateUrl: 'app/main/user/user.html',
         controller: 'UserController',
         controllerAs: 'userController',
         data: {
           root: false,
           displayName: 'Users'
+        },
+        resolve: {
+          users: function($stateParams, Store, UserFactory) {
+            return UserFactory.getUsers({
+              candidate: $stateParams.candidateName || Store.get('candidateName')
+            })
+          }
         }
       })
       .state('main.transfers', {

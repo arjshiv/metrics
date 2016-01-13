@@ -1,1 +1,16 @@
-{{userController.name}}
+<div class="user">
+  <div class="row">
+    <div class="col-md-6">
+      (<span class="eye-catcher">{{userController.users.length}}</span> total users found for candidate <span
+      class="eye-catcher">{{userController.candidateName}}</span>)
+    </div>
+    <div class="col-md-6">
+      <button class="btn pull-right" ng-click="userController.addUser()"><i class="fa fa-plus"></i> Add user</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="dashboard-table-container">
+      <div ui-grid-selection ui-grid-grouping ui-grid="userController.gridOptions" class="dashboard-table"></div>
+    </div>
+  </div>
+</div>
