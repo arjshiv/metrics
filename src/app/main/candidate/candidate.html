@@ -1,1 +1,22 @@
-{{candidateController.name}}
+<div id="candidate">
+  <form ng-submit="candidateController.onSubmit()">
+    <div class="row">
+      <div class="col-md-3">
+        <b>Select a candidate</b>
+      </div>
+      <div class="col-md-6">
+        <input type="text" ng-model="candidateController.candidateName"
+               typeahead-on-select="candidateController.onSelect()" placeholder="Start typing..." uib-typeahead="candidate for candidate in candidateController.candidates" class="form-control">
+      </div>
+      <div class="col-md-9">
+        (<span class="eye-catcher">{{candidateController.candidates.length}}</span> total candidates found)
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-9">
+        <button class="btn pull-right" type="submit" ng-disabled="!candidateController.candidateName">Go!
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

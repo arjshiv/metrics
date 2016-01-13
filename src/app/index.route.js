@@ -18,13 +18,18 @@
         }
       })
       .state('main.candidates', {
-        url: '/candidates',
+        url: '/candidates?candidateName',
         templateUrl: 'app/main/candidate/candidate.html',
         controller: 'CandidateController',
         controllerAs: 'candidateController',
         data: {
           root: false,
           displayName: 'Candidates'
+        },
+        resolve: {
+          candidates: function(UserFactory) {
+            return UserFactory.getAllCandidates();
+          }
         }
       })
       .state('main.users', {
@@ -48,7 +53,7 @@
         }
       });
 
-    $urlRouterProvider.otherwise('/main');
+    $urlRouterProvider.otherwise('/main.candidates');
   }
 
 })();

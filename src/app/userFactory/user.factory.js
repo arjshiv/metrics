@@ -21,7 +21,7 @@
 
     function getAllCandidates() {
       return getUsers({candidate: 'FULLSTACK'}).then(function(allData) {
-        return _.uniq(allData, 'candidate');
+        return _.chain(allData).map('candidate').uniq().value();
       });
     }
 
