@@ -49,6 +49,157 @@ body
   margin 0 auto
 
 
+//custom toolbar
+// For Google Chrome
+::-webkit-scrollbar
+  width: 10px;
+  height: 10px;
+
+::-webkit-scrollbar-thumb
+  background: #aaa;
+  border-radius: 10px;
+  &:hover
+    background: #888;
+  &:active
+    background: #666;
+
+
+::-webkit-scrollbar-track
+  background: #ccc;
+
+
+// For Internet Explorer
+body
+  scrollbar-face-color: #888;
+  scrollbar-track-color: #ccc;
+
+
+/*.ui-grid {
+  border: none;
+}
+
+.ui-grid-header {
+  border: none;
+  border-bottom: 1px solid #69ACF7;
+}
+
+.ui-grid-header-cell {
+  background-color: white;
+  font-size: $body_size;
+}
+
+.ui-grid-cell, .ui-grid-header-cell {
+  border-left: none !important;
+  border-right: none !important;
+  border: none;
+}
+
+
+.ui-grid-row:nth-child(even), .ui-grid-row:nth-child(odd)  {
+  .ui-grid-cell {
+    background-color: white;
+    border-bottom: 1px solid $grey1;
+  }
+  &:hover {
+    .ui-grid-cell {
+      background-color: $yellowtint5;
+    }
+  }
+}
+
+.ui-grid-row {
+  & {
+    .ui-grid-selection-row-header-buttons {
+      color: $green;
+    }
+    &:hover {
+      .ui-grid-selection-row-header-buttons {
+        color: $grey4;
+        opacity: 1;
+      }
+    }
+  }
+  &.ui-grid-row-selected > [ui-grid-row] > .ui-grid-cell {
+    background-color: #dff9e3;
+  }
+}
+
+.ui-grid-cell {
+  .ui-grid-cell-contents {
+    font-size: $table_text_size;
+  }
+}
+
+!*Common style for grid inputs*!
+.apb-ui-grid-input-styling {
+  border: 1px solid $grey2;
+  font-size: $table_text_size;
+  padding: 3px;
+  border-radius: 4px;
+  font-weight: normal;
+  &:hover,
+  &:active,
+  &:focus {
+    border: 1px solid $orangetint3;
+    border-radius: 3px;
+    outline: none;
+    -webkit-box-shadow: inset 0 $orangetint3, 0 0 8px $orangetint5;
+    box-shadow: inset 0 1px 1px $orangetint3, 0 0 8px $orangetint5;
+  }
+}
+
+.ui-grid-header-cell {
+  input[type="text"].ui-grid-filter-input {
+    @extend .apb-ui-grid-input-styling;
+  }
+  select {
+    @extend .apb-ui-grid-input-styling;
+  }
+}
+
+.ui-grid-pager-row-count-picker {
+  select {
+    @extend .apb-ui-grid-input-styling;
+  }
+}
+
+.ui-grid-pager-panel {
+  font-size: $table_text_size;
+}
+
+.ui-grid-column-menu-button {
+  right: 0;
+  top: -8px;
+  font-size: 20px;
+  &:hover {
+    i:before {
+      font-weight: bold;
+      color: white;
+      background-color: $grey4;
+      border-radius: 50px;
+    }
+  }
+}
+
+.ui-grid-menu {
+  .ui-grid-menu-inner {
+    background: none;
+    background-color: white;
+    ul {
+      li:hover {
+        box-shadow: none;
+        background-color: $grey4;
+        color: white;
+      }
+    }
+  }
+}
+
+.ui-grid-filter-container {
+  padding: 4px 0px;
+  width: 95%;
+}*/
+
 
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
