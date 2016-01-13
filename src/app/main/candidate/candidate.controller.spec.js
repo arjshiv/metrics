@@ -4,7 +4,7 @@
   beforeEach(function() {
     module('fullStackCodingChallenge', function ($provide) {
       $provide.service('candidates', function () {
-        return ['Some User', 'Another User'];
+        return ['Some Candidate', 'Another Candidate'];
       });
     });
   });
