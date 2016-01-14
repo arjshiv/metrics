@@ -21,19 +21,8 @@
     return directive;
 
     /** @ngInject */
-    function NavbarController($state, _) {
-      var vm = this;
-      vm.states = _.chain($state.get())
-        .filter(function (s) {
-          return (s.hasOwnProperty('data') && s.data.hasOwnProperty('root') && !s.data.root);
-        })
-        .map(function(s) {
-          return {
-            displayName: s.data.displayName,
-            ref: s.name
-          }
-        })
-        .value();
+    function NavbarController() {
+
     }
   }
 

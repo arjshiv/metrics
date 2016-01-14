@@ -48,6 +48,18 @@ body
   padding 1em
   margin 0 auto
 
+//bootstrap material overrides
+.btn
+  &.btn-primary, &.btn-warning, &.btn-danger
+    background-color white
+
+input
+  /*Common style for grid inputs*/
+  border: 1px solid #aaa;
+  padding: 3px;
+  border-radius: 4px;
+  font-weight: normal;
+
 
 //custom toolbar
 // For Google Chrome
@@ -74,7 +86,7 @@ body
   scrollbar-track-color: #ccc;
 
 
-/*.ui-grid {
+.ui-grid {
   border: none;
 }
 
@@ -124,49 +136,6 @@ body
   }
 }
 
-.ui-grid-cell {
-  .ui-grid-cell-contents {
-    font-size: $table_text_size;
-  }
-}
-
-!*Common style for grid inputs*!
-.apb-ui-grid-input-styling {
-  border: 1px solid $grey2;
-  font-size: $table_text_size;
-  padding: 3px;
-  border-radius: 4px;
-  font-weight: normal;
-  &:hover,
-  &:active,
-  &:focus {
-    border: 1px solid $orangetint3;
-    border-radius: 3px;
-    outline: none;
-    -webkit-box-shadow: inset 0 $orangetint3, 0 0 8px $orangetint5;
-    box-shadow: inset 0 1px 1px $orangetint3, 0 0 8px $orangetint5;
-  }
-}
-
-.ui-grid-header-cell {
-  input[type="text"].ui-grid-filter-input {
-    @extend .apb-ui-grid-input-styling;
-  }
-  select {
-    @extend .apb-ui-grid-input-styling;
-  }
-}
-
-.ui-grid-pager-row-count-picker {
-  select {
-    @extend .apb-ui-grid-input-styling;
-  }
-}
-
-.ui-grid-pager-panel {
-  font-size: $table_text_size;
-}
-
 .ui-grid-column-menu-button {
   right: 0;
   top: -8px;
@@ -198,7 +167,7 @@ body
 .ui-grid-filter-container {
   padding: 4px 0px;
   width: 95%;
-}*/
+}
 
 
 /**
