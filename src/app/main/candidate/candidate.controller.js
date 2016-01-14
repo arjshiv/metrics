@@ -19,7 +19,6 @@
       $state.transitionTo('main.users', {candidateName: vm.candidateName});
     };
 
-
     if ($stateParams.candidateName && (candidates.indexOf($stateParams.candidateName) >= 0)) {
       vm.candidateName = $stateParams.candidateName;
       Store.setProperty('candidateName', vm.candidateName);

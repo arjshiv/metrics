@@ -6,16 +6,24 @@
     .factory('RestFactory', RestFactory);
 
   /** @ngInject */
-  /**
-   * The factory which provides all CRUD methods via the REST API
-   * @param {String} apiBaseUrl The constant URL
-   * @param apiBaseUrl
-   * @param _
-   * @returns {{url: *}}
+	/**
+   * The factory which provides an interface to the CRUD methods via the REST API
+   * @param $http
+   * @param $log
+   * @returns {{makeRequest: makeRequest}}
    * @constructor
-   */
+	 */
   function RestFactory($http, $log) {
 
+		/**
+     * Make an http request
+     * @param {{}} parameters The url parameters
+     * @param {String} parameters.method GET or POST
+     * @param {String} parameters.url The url to call
+     * @param {{}=} parameters.params Additional options for a GET method
+     * @param {{}=} parameters.data Additional data for a POST method
+     * @returns {Promise} A promise which will resolve to an array of data if successful, or resolve to an empty array log an error
+     */
     function makeRequest(parameters) {
       var requestObject = {
         method: parameters.method || 'GET',
