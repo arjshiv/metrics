@@ -6,6 +6,11 @@
     .config(routerConfig);
 
   /** @ngInject */
+	/**
+   * Configure the app routes
+   * @param $stateProvider
+   * @param $urlRouterProvider
+   */
   function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('main', {
@@ -27,6 +32,11 @@
           displayName: 'Candidates'
         },
         resolve: {
+					/**
+           * Resolve all candidates within the state
+           * @param UserFactory The user factory
+           * @returns {Promise} Which resolves to list of candidates
+           */
           candidates: function(UserFactory) {
             return UserFactory.getAllCandidates();
           }
@@ -42,6 +52,13 @@
           displayName: 'Users'
         },
         resolve: {
+					/**
+           * Resolve users
+           * @param $stateParams
+           * @param Store
+           * @param UserFactory
+           * @returns {Promise}
+					 */
           users: function($stateParams, Store, UserFactory) {
             return UserFactory.getUsers({
               candidate: $stateParams.candidateName || Store.get('candidateName')
@@ -49,7 +66,7 @@
           }
         }
       })
-      .state('main.transfers', {
+      .state('main.users.transfers', {
         url: '/candidates/:candidateName/users/:userId/transfers',
         templateUrl: 'app/main/transfer/transfer.html',
         controller: 'TransferController',
@@ -57,6 +74,21 @@
         data: {
           root: false,
           displayName: 'Transfers'
+        },
+        resolve: {
+					/**
+           * Resolves list of transfers into the state
+           * @param $stateParams
+           * @param Store
+           * @param TransferFactory
+           * @returns {Promise}
+					 */
+          transfers: function($stateParams, Store, TransferFactory) {
+            return TransferFactory.getTransfers({
+              candidate: $stateParams.candidateName || Store.get('candidateName'),
+              userId: $stateParams.userId || Store.get('userId')
+            })
+          }
         }
       });
 
