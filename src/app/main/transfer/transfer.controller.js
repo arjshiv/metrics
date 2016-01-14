@@ -6,7 +6,7 @@
     .controller('TransferController', TransferController);
 
   /** @ngInject */
-  function TransferController() {
+  function TransferController(transfers) {
     var vm = this;
     vm.name = 'TransferController';
   }

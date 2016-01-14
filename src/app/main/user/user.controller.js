@@ -6,10 +6,10 @@
     .controller('UserController', UserController);
 
   /** @ngInject */
-  function UserController(users, $state, $stateParams, Store, UserFactory, $uibModal, $log) {
+  function UserController(users, $state, candidateName, UserFactory, $uibModal, $log) {
     var vm = this;
     vm.users = users;
-    vm.candidateName = $stateParams.candidateName; //mandatory at this point
+    vm.candidateName = candidateName;
 
     /**
      * UI Grid options for the user table

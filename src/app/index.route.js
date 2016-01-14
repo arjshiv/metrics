@@ -59,10 +59,13 @@
            * @param UserFactory
            * @returns {Promise}
 					 */
-          users: function($stateParams, Store, UserFactory) {
+          users: function($stateParams, UserFactory) {
             return UserFactory.getUsers({
-              candidate: $stateParams.candidateName || Store.get('candidateName')
+              candidate: $stateParams.candidateName
             })
+          },
+          candidateName: function($stateParams) {
+            return $stateParams.candidateName;
           }
         }
       })
@@ -83,11 +86,17 @@
            * @param TransferFactory
            * @returns {Promise}
 					 */
-          transfers: function($stateParams, Store, TransferFactory) {
+          transfers: function($stateParams, TransferFactory) {
             return TransferFactory.getTransfers({
-              candidate: $stateParams.candidateName || Store.get('candidateName'),
-              userId: $stateParams.userId || Store.get('userId')
+              candidate: $stateParams.candidateName,
+              userId: $stateParams.userId
             })
+          },
+          userId: function($stateParams) {
+            return $stateParams.userId;
+          },
+          candidateName: function($stateParams) {
+            return $stateParams.candidateName;
           }
         }
       });
