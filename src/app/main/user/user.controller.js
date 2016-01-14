@@ -10,6 +10,11 @@
     var vm = this;
     vm.users = users;
     vm.candidateName = $stateParams.candidateName; //mandatory at this point
+
+    /**
+     * UI Grid options for the user table
+     * @type {{data: [], enableFiltering: boolean, enableRowSelection: boolean, enableFullRowSelection: boolean}}
+     */
     vm.gridOptions = {
       data: vm.users,
       enableFiltering: true,
@@ -17,7 +22,10 @@
       enableFullRowSelection: true
     };
 
-    vm.addUser = function() {
+		/**
+     * Open modal to add a user
+     */
+    vm.addUser = function addUser() {
       var modalInstance = $uibModal.open({
         animation: true,
         templateUrl: 'app/main/user/user.modal.html',
