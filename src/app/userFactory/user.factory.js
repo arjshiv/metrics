@@ -7,7 +7,7 @@
 
   /** @ngInject */
 	/**
-   * Factory to handle all CRUD operations for a users
+   * Factory to handle all CRUD operations for users
    * @param RestFactory
    * @param apiBaseUrl
    * @param _
