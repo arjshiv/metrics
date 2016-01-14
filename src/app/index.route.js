@@ -50,7 +50,7 @@
         }
       })
       .state('main.transfers', {
-        url: '/transfers',
+        url: '/candidates/:candidateName/users/:userId/transfers',
         templateUrl: 'app/main/transfer/transfer.html',
         controller: 'TransferController',
         controllerAs: 'transferController',

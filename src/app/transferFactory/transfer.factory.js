@@ -8,12 +8,14 @@
   /** @ngInject */
   function TransferFactory(RestFactory, apiBaseUrl, _, $q) {
     var transferUrl = apiBaseUrl + 'transfer/';
-
-    function getTransfer(parameters) {
+    var userTransferUrlBase = apiBaseUrl + 'user/';
+    function getTransfers(parameters) {
       var candidate = parameters.candidate;
       var url = transferUrl;
       if (parameters.hasOwnProperty('id')) {
         url += '/' + parameters.id;
+      } else if (parameters.hasOwnProperty('userId')) {
+        url = userTransferUrlBase + parameters.userId + '/'
       }
       return RestFactory.makeRequest({
         url: url,
@@ -45,7 +47,7 @@
     }
 
     return {
-      getTransfer: getTransfer,
+      getTransfers: getTransfers,
       createTransfer: createTransfer
     }
   }
