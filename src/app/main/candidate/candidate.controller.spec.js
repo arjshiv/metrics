@@ -4,7 +4,7 @@
   beforeEach(function() {
     module('fullStackCodingChallenge', function ($provide) {
       $provide.service('candidates', function () {
-        return ['Some Candidate', 'Another Candidate'];
+        return ['cjm123', 'Some Candidate', 'Another Candidate'];
       });
     });
   });
@@ -27,6 +27,13 @@
       vm.candidateName = 'cjm123';
       vm.onSelect();
       expect(state.transitionTo).toHaveBeenCalledWith('main.candidates', {candidateName: 'cjm123'}, {notify: false});
+    }));
+
+    it('should not change candidate url param if bad selection', inject(function ($controller) {
+      var vm = $controller('CandidateController');
+      vm.candidateName = 'random candidate';
+      vm.onSelect();
+      expect(vm.candidateName).toBeFalsy();
     }));
 
     it('should go to users on submit', inject(function ($controller) {
