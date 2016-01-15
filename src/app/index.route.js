@@ -34,11 +34,11 @@
         resolve: {
 					/**
            * Resolve all candidates within the state
-           * @param UserFactory The user factory
+           * @param CandidateFactory The candidate factory
            * @returns {Promise} Which resolves to list of candidates
            */
-          candidates: function(UserFactory) {
-            return UserFactory.getAllCandidates();
+          candidates: function(CandidateFactory) {
+            return CandidateFactory.getAllCandidates();
           }
         }
       })
