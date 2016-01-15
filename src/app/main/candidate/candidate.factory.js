@@ -14,7 +14,7 @@
    * @returns {{getAllCandidates: getAllCandidates}}
    * @constructor
 	 */
-  function CandidateFactory(UserFactory,  _, $q) {
+  function CandidateFactory(UserFactory,  _) {
 
     /**
      * Get all possible candidates
