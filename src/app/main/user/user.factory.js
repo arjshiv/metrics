@@ -36,16 +36,6 @@
     }
 
 		/**
-     * Get all possible candidates
-     * @returns {Promise} A promise which resolves to an array of strings, each representing a unique candidate
-     */
-    function getAllCandidates() {
-      return getUsers({candidate: 'FULLSTACK'}).then(function(allData) {
-        return _.chain(allData).map('candidate').uniq().value();
-      });
-    }
-
-		/**
      * Create a new user
      * @param {{}} parameters Request parameters
      * @param {String} parameters.name The new user's name
@@ -75,7 +65,6 @@
 
     return {
       createUser: createUser,
-      getAllCandidates: getAllCandidates,
       getUsers: getUsers
     }
   }
