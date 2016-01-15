@@ -30,19 +30,19 @@
       expect(typeof mockRestFactory.makeRequest).toBe('function');
     });
 
-    it('should return an array on request', function(apiBaseUrl) {
-
-      //mockRestFactory.makeRequest({
-      //  method: 'GET',
-      //  url: apiBaseUrl,
-      //  parameters: {
-      //    candidate: 'cjm123'
-      //  }
-      //}).then(function(users) {
-      //  expect(angular.isArray(users)).toBeTruthy();
-      //});
-      //httpBackend.flush();
-    });
+    //it('should return an array on request', function(apiBaseUrl) {
+		//
+    //  mockRestFactory.makeRequest({
+    //    method: 'GET',
+    //    url: apiBaseUrl,
+    //    parameters: {
+    //      candidate: 'cjm123'
+    //    }
+    //  }).then(function(users) {
+    //    expect(angular.isArray(users)).toBeTruthy();
+    //  });
+    //  httpBackend.flush();
+    //});
 
   });
 })();
