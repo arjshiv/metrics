@@ -55,7 +55,6 @@
 					/**
            * Resolve users
            * @param $stateParams
-           * @param Store
            * @param UserFactory
            * @returns {Promise}
 					 */
