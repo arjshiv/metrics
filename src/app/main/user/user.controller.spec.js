@@ -6,6 +6,9 @@
       $provide.service('users', function () {
         return ['Some User', 'Another User'];
       });
+      $provide.service('candidateName', function () {
+        return 'cjm123';
+      });
     });
   });
   beforeEach(module('ui.router'));
@@ -16,6 +19,7 @@
     beforeEach(function() {
       spyOn(state, 'transitionTo').and.callThrough();
     });
+
     it('should have users', inject(function ($controller) {
       var vm = $controller('UserController');
       //write your tests here
