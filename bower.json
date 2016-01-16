@@ -21,7 +21,8 @@
     "lodash": "~3.10.1",
     "components-font-awesome": "~4.5.0",
     "angular-bootstrap": "~1.0.3",
-    "angular-ui-grid": "~3.0.7"
+    "angular-ui-grid": "~3.0.7",
+    "toastr": "~2.1.2"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.2"

@@ -1,4 +1,4 @@
-/* global malarkey:false, moment:false, _:false, console:false */
+/* global malarkey:false, moment:false, _:false, console:false, toastr:false */
 (function() {
   'use strict';
 
@@ -9,5 +9,6 @@
     .constant('apiBaseUrl', 'http://fake-button.herokuapp.com/')
     .constant('console', console)
     .constant('moment', moment)
+    .constant('$', $)
     .constant('toastr', toastr);
 })();

@@ -13,7 +13,9 @@
    * @returns {{makeRequest: makeRequest}}
    * @constructor
 	 */
-  function RestFactory($http, $log, toastr) {
+  function RestFactory($http, $log, toastr, $) {
+    //set up correct content type
+    $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
 
 		/**
      * Make an http request
@@ -33,7 +35,7 @@
       if ((requestObject.method === 'GET') && (parameters.hasOwnProperty('params'))) {
         requestObject.params = parameters.params;
       } else {
-        requestObject.data = parameters.data;
+        requestObject.data = JSON.stringify(parameters.data);
       }
       return $http(requestObject).then(_successHandler, _failureHandler);
     }
@@ -62,7 +64,7 @@
       toastr.error('Could not reach the server!');
       return {
         success: false,
-        data: urlResponse.data
+        data: []
       };
     }
 

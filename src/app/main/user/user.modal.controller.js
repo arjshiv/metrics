@@ -6,7 +6,7 @@
     .controller('UserModalController', UserModalController);
 
   /** @ngInject */
-  function UserModalController(candidate, UserFactory, $uibModalInstance, $log) {
+  function UserModalController(candidate, UserFactory, $uibModalInstance, $log, toastr) {
     var vm = this;
     vm.formOptions = {
       name: '',
@@ -25,14 +25,19 @@
       vm.success = undefined;
       UserFactory.createUser(vm.formOptions)
         .then(
-          function(createdUser) {
-            $log.info('Created new user');
-            $log.info(createdUser);
-            vm.success = true;
-          },
-          function() {
-            $log.error('Could not create user');
-            vm.success = false;
+          function(response) {
+            vm.loading = false;
+            if (response.success) {
+              $log.info('Created new user');
+              $log.info(createdUser);
+              vm.success = true;
+              toastr.success('Successfully created user ' + vm.formOptions.name);
+              vm.close();
+            } else {
+              $log.error('Could not create user');
+              vm.success = false;
+              vm.loading = false;
+            }
           }
         );
     };

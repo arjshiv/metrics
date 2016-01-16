@@ -51,8 +51,16 @@ body
 
 //bootstrap material overrides
 .btn
-  &.btn-primary, &.btn-warning, &.btn-danger
+  &.btn-primary, &.btn-default, &.btn-warning, &.btn-danger
     background-color white
+    &:hover
+      background-color white !important
+      box-shadow 1px 2px 0 0 #dbdbdb
+
+
+.modal
+  .row
+    padding 1em 0
 
 input
   /*Common style for grid inputs*/
