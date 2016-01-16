@@ -63,8 +63,23 @@
       });
     }
 
+    /**
+     * Delete a user and their associated transfers
+     * @param {{}} parameters Request parameters
+     * @param {String} parameters.userId
+     * @returns {Promise}
+     */
+    function deleteUser(parameters) {
+      return RestFactory.makeRequest({
+        url: userUrl,
+        method: 'POST',
+        data: parameters
+      });
+    }
+
     return {
       createUser: createUser,
+      deleteUser: deleteUser,
       getUsers: getUsers
     }
   }
