@@ -41,22 +41,28 @@
     /**
      * AJAX success handler
      * @param {Object} urlResponse The response from the Url
-     * @returns {Array}
+     * @returns {{success: boolean, data: *}}
      * @private
      */
     function _successHandler(urlResponse) {
-      return urlResponse.data;
+      return {
+        success: true,
+        data: urlResponse.data
+      };
     }
 
     /**
      * AJAX error handler
      * @param {Object} data The error data
-     * @returns {Array}
+     * @returns {{success: boolean, data: *}}
      * @private
      */
     function _failureHandler(data) {
       $log.error(data);
-      return [];
+      return {
+        success: false,
+        data: urlResponse.data
+      };
     }
 
     return {

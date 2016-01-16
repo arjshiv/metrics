@@ -22,12 +22,18 @@
      * Get users for a given candidate
      * @param {{}} parameters The parameters object
      * @param {String} parameters.candidate The candidate to make the request for
+     * @param {String | Integer=} parameters.userId The user ID to make the request for
      * @returns {Promise}
      */
     function getUsers(parameters) {
       var candidate = parameters.candidate;
+      var userId = parameters.userId;
+      var localUrl = userUrl;
+      if (userId !== undefined) {
+        localUrl += '/' + userId;
+      }
       return RestFactory.makeRequest({
-        url: userUrl,
+        url: localUrl,
         method: 'GET',
         params: {
           candidate: candidate

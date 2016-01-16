@@ -21,7 +21,8 @@
      * @returns {Promise} A promise which resolves to an array of strings, each representing a unique candidate
      */
     function getAllCandidates() {
-      return UserFactory.getUsers({candidate: 'FULLSTACK'}).then(function(allData) {
+      return UserFactory.getUsers({candidate: 'FULLSTACK'}).then(function(response) {
+        var allData = response.data;
         return _.chain(allData).map('candidate').uniq().value();
       });
     }
