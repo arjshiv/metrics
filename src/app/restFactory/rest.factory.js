@@ -13,7 +13,7 @@
    * @returns {{makeRequest: makeRequest}}
    * @constructor
 	 */
-  function RestFactory($http, $log) {
+  function RestFactory($http, $log, toastr) {
 
 		/**
      * Make an http request
@@ -59,6 +59,7 @@
      */
     function _failureHandler(data) {
       $log.error(data);
+      toastr.error('Could not reach the server!');
       return {
         success: false,
         data: urlResponse.data

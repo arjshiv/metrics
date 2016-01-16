@@ -61,6 +61,8 @@
           users: function($stateParams, UserFactory) {
             return UserFactory.getUsers({
               candidate: $stateParams.candidateName
+            }).then(function(response) {
+              return response.data;
             })
           },
           candidateName: function($stateParams) {
@@ -89,7 +91,9 @@
             return TransferFactory.getTransfers({
               candidate: $stateParams.candidateName,
               userId: $stateParams.userId
-            })
+            }).then(function(response) {
+              return response.data;
+            });
           },
           userId: function($stateParams) {
             return $stateParams.userId;
