@@ -9,7 +9,7 @@
   function TransferModalController(candidate, userId, TransferFactory, $uibModalInstance, $log) {
     var vm = this;
     vm.formOptions = {
-      amount: '',
+      amount: 1,
       candidate: candidate,
       userId: userId
     };
