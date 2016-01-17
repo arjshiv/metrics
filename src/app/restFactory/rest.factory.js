@@ -55,16 +55,18 @@
 
     /**
      * AJAX error handler
-     * @param {Object} data The error data
+     * @param {Object} failureResponse The error data
      * @returns {{success: boolean, data: *}}
      * @private
      */
-    function _failureHandler(data) {
-      $log.error(data);
+    function _failureHandler(failureResponse) {
+      $log.error(failureResponse);
       toastr.error('Could not reach the server!');
       return {
         success: false,
-        data: []
+        data: [],
+        status: failureResponse.statusText,
+        message: failureResponse.data
       };
     }
 

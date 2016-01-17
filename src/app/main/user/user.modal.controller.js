@@ -16,6 +16,7 @@
 
     vm.loading = false;
     vm.success = undefined;
+    vm.errorMessage = '';
 
 		/**
      * Create the user
@@ -28,13 +29,15 @@
           function(response) {
             vm.loading = false;
             if (response.success) {
+              var createdUser = response.data;
               $log.info('Created new user');
               $log.info(createdUser);
               vm.success = true;
               toastr.success('Successfully created user ' + vm.formOptions.name);
-              vm.close();
+              vm.close(createdUser);
             } else {
-              $log.error('Could not create user');
+              $log.error(response);
+              vm.errorMessage = response.message;
               vm.success = false;
               vm.loading = false;
             }
@@ -53,8 +56,12 @@
 		/**
      * Close the modal
      */
-    vm.close = function() {
-      $uibModalInstance.dismiss('cancel');
+    vm.close = function(createdUser) {
+      if (!createdUser) {
+        $uibModalInstance.dismiss('cancel');
+      } else {
+        $uibModalInstance.close(createdUser);
+      }
     };
   }
 })();

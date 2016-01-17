@@ -59,7 +59,12 @@
       });
       if (!valid) {
         var dfd = $q.defer();
-        dfd.resolve([]);
+        dfd.resolve({
+          success: false,
+          data: [],
+          status: 'Parameters were not specified',
+          message: 'Parameters were not specified'
+        });
         return dfd.promise();
       }
       return RestFactory.makeRequest({

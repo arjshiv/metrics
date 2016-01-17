@@ -16,7 +16,7 @@
   </div>
 </div>
 <div class="modal-footer">
-  <span ng-if="userModal.success === false" class="alert alert-warning pull-left">Could not save user. Please try again</span>
+  <span ng-if="userModal.success === false" class="alert alert-warning pull-left">{{userModal.errorMessage}}. Please try again</span>
   <span class="fa fa-spinner fa-spin" ng-if="userModal.loading"></span>
   <button class="btn btn-primary" ng-click="userModal.createUser();" ng-disabled="!userModal.isValid()" type="button">OK</button>
   <button class="btn btn-warning" ng-click="userModal.close()" type="button">Cancel</button>

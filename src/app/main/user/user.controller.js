@@ -37,8 +37,8 @@
         }
       });
 
-      modalInstance.result.then(function () {
-
+      modalInstance.result.then(function (createdUser) {
+        vm.users.push(createdUser);
       }, function () {
         $log.info('Modal dismissed at: ' + new Date());
       });
