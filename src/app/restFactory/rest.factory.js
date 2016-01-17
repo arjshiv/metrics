@@ -13,7 +13,7 @@
    * @returns {{makeRequest: makeRequest}}
    * @constructor
 	 */
-  function RestFactory($http, $log, toastr, $) {
+  function RestFactory($http, $log, toastr) {
     //set up correct content type
     $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
 
@@ -35,7 +35,7 @@
       if ((requestObject.method === 'GET') && (parameters.hasOwnProperty('params'))) {
         requestObject.params = parameters.params;
       } else {
-        requestObject.data = JSON.stringify(parameters.data);
+        requestObject.data = angular.toJson(parameters.data);
       }
       return $http(requestObject).then(_successHandler, _failureHandler);
     }

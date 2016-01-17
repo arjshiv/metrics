@@ -9,6 +9,5 @@
     .constant('apiBaseUrl', 'http://fake-button.herokuapp.com/')
     .constant('console', console)
     .constant('moment', moment)
-    .constant('$', $)
     .constant('toastr', toastr);
 })();

@@ -23,7 +23,10 @@
         }
       })
       .state('main.candidates', {
-        url: '/candidates?candidateName',
+        url: '/candidates/:candidateName',
+        params: {
+          candidateName: {value: null, squash: true}
+        },
         templateUrl: 'app/main/candidate/candidate.html',
         controller: 'CandidateController',
         controllerAs: 'candidateController',
