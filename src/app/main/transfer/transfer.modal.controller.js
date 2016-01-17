@@ -16,6 +16,7 @@
 
     vm.loading = false;
     vm.success = undefined;
+    vm.errorMessage = '';
 
     /**
      * Create the transfer
@@ -25,14 +26,17 @@
       vm.success = undefined;
       TransferFactory.createTransfer(vm.formOptions)
         .then(
-          function(createdTransfer) {
+          function(response) {
+            var createdTransfer = response.data;
             $log.info('Created new transfer');
             $log.info(createdTransfer);
             vm.success = true;
+            vm.close(createdTransfer);
           },
-          function() {
+          function(response) {
             $log.error('Could not create transfer');
             vm.success = false;
+            vm.errorMessage = response.message;
           }
         );
     };
@@ -48,8 +52,12 @@
     /**
      * Close the modal
      */
-    vm.close = function() {
-      $uibModalInstance.dismiss('cancel');
+    vm.close = function(createdTransfer) {
+      if (!createdTransfer) {
+        $uibModalInstance.dismiss('cancel');
+      } else {
+        $uibModalInstance.close(createdTransfer);
+      }
     };
   }
 })();

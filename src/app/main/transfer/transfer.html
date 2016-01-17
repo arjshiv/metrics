@@ -10,7 +10,7 @@
   </div>
   <div class="row">
     <div class="dashboard-table-container" ng-if="transferController.transfers">
-      <div ui-grid-selection ui-grid-grouping ui-grid="transferController.gridOptions" class="dashboard-table"></div>
+      <div ui-grid-grouping ui-grid="transferController.gridOptions" class="dashboard-table"></div>
     </div>
     <div ng-if="!transferController.transfers">
       <span class="alert alert-info">No transfers found. Please <a href="#" ng-click="transferController.addTransfer()">add transfers</a> for this user</span>

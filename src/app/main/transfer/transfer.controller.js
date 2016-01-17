@@ -6,7 +6,7 @@
     .controller('TransferController', TransferController);
 
   /** @ngInject */
-  function TransferController(transfers, $uibModal, userId, candidateName, $log) {
+  function TransferController(transfers, $uibModal, userId, candidateName, $log, toastr) {
     var vm = this;
     vm.transfers = transfers;
     vm.userId = userId;
@@ -19,8 +19,8 @@
     vm.gridOptions = {
       data: vm.transfers,
       enableFiltering: true,
-      enableRowSelection: true,
-      enableFullRowSelection: true
+      enableRowSelection: false,
+      enableFullRowSelection: false
     };
 
 
@@ -42,8 +42,12 @@
         }
       });
 
-      modalInstance.result.then(function () {
-
+      modalInstance.result.then(function (createdTransfer) {
+        if (!createdTransfer.hasOwnProperty('candidate')) {
+          createdTransfer.candidate = vm.candidateName;
+        }
+        toastr.success('Successfully created new transfer!');
+        vm.transfers.push(createdTransfer);
       }, function () {
         $log.info('Modal dismissed at: ' + new Date());
       });

@@ -18,7 +18,7 @@
 <div class="modal-footer">
   <span ng-if="transferModal.success === false" class="alert alert-warning pull-left">{{transferModal.errorMessage}}. Please try again</span>
   <span class="fa fa-spinner fa-spin" ng-if="transferModal.loading"></span>
-  <button class="btn btn-primary" ng-click="transferModal.createtransfer();" ng-disabled="!transferModal.isValid()" type="button">OK</button>
+  <button class="btn btn-primary" ng-click="transferModal.createTransfer();" ng-disabled="!transferModal.isValid()" type="button">OK</button>
   <button class="btn btn-warning" ng-click="transferModal.close()" type="button">Cancel</button>
 </div>
 `
