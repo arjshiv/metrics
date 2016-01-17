@@ -29,7 +29,7 @@
       var candidate = parameters.candidate;
       var userId = parameters.userId;
       var localUrl = userUrl;
-      if (userId !== undefined) {
+      if (angular.isDefined(userId)) {
         localUrl += '/' + userId;
       }
       return RestFactory.makeRequest({

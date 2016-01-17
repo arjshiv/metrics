@@ -20,6 +20,9 @@
         controllerAs: 'mainController',
         data: {
           root: true
+        },
+        ncyBreadcrumb: {
+          label: 'Main'
         }
       })
       .state('main.candidates', {
@@ -33,6 +36,9 @@
         data: {
           root: false,
           displayName: 'Candidates'
+        },
+        ncyBreadcrumb: {
+          label: 'Candidates'
         },
         resolve: {
 					/**
@@ -53,6 +59,9 @@
         data: {
           root: false,
           displayName: 'Users'
+        },
+        ncyBreadcrumb: {
+          label: 'Users'
         },
         resolve: {
 					/**
@@ -85,6 +94,9 @@
         data: {
           root: false,
           displayName: 'Transfers'
+        },
+        ncyBreadcrumb: {
+          label: 'Transfers'
         },
         resolve: {
 					/**

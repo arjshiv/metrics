@@ -65,7 +65,7 @@
     };
 
     vm.viewTransfers = function viewTransfers() {
-      $state.transitionTo('main.transfers', {candidateName: vm.candidateName, userId: vm.selectedUser.id});
+      $state.transitionTo('main.users.transfers', {candidateName: vm.candidateName, userId: vm.selectedUser.id});
     }
   }
 })();
