@@ -22,7 +22,8 @@
           root: true
         },
         ncyBreadcrumb: {
-          label: 'Main'
+          label: 'Main',
+          skip: true
         }
       })
       .state('main.candidates', {
@@ -61,6 +62,7 @@
           displayName: 'Users'
         },
         ncyBreadcrumb: {
+          parent: 'main.candidates',
           label: 'Users'
         },
         resolve: {
