@@ -65,7 +65,7 @@
             return UserFactory.getUsers({
               candidate: $stateParams.candidateName
             }).then(function(response) {
-              return response.data;
+              return response.data || [];
             })
           },
           candidateName: function($stateParams) {
@@ -73,7 +73,7 @@
           }
         }
       })
-      .state('main.users.transfers', {
+      .state('main.transfers', {
         url: '/candidates/:candidateName/users/:userId/transfers',
         templateUrl: 'app/main/transfer/transfer.html',
         controller: 'TransferController',

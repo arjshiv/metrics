@@ -10,6 +10,7 @@
     var vm = this;
     vm.users = users;
     vm.candidateName = candidateName;
+    vm.selectedUser = undefined;
 
     /**
      * UI Grid options for the user table
@@ -19,7 +20,17 @@
       data: vm.users,
       enableFiltering: true,
       enableRowSelection: true,
-      enableFullRowSelection: true
+      enableFullRowSelection: true,
+      multiSelect: false, //one user at a time
+      onRegisterApi: function(api) {
+        vm.gridApi = api;
+        vm.gridApi.selection.on.rowSelectionChanged(null, function(row) {
+          vm.selectedUser = undefined;
+          if (row.isSelected) {
+            vm.selectedUser = row.entity;
+          }
+        });
+      }
     };
 
 		/**
@@ -43,5 +54,9 @@
         $log.info('Modal dismissed at: ' + new Date());
       });
     };
+
+    vm.viewTransfers = function viewTransfers() {
+      $state.transitionTo('main.transfers', {candidateName: vm.candidateName, userId: vm.selectedUser.id});
+    }
   }
 })();

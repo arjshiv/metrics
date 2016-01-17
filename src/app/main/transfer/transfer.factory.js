@@ -33,7 +33,7 @@
       if (parameters.hasOwnProperty('id')) {
         url += '/' + parameters.id;
       } else if (parameters.hasOwnProperty('userId')) {
-        url = userTransferUrlBase + parameters.userId + '/'
+        url = userTransferUrlBase + parameters.userId + '/transfers'
       }
       return RestFactory.makeRequest({
         url: url,
