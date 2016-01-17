@@ -73,11 +73,15 @@
           }
         }
       })
-      .state('main.transfers', {
-        url: '/candidates/:candidateName/users/:userId/transfers',
-        templateUrl: 'app/main/transfer/transfer.html',
-        controller: 'TransferController',
-        controllerAs: 'transferController',
+      .state('main.users.transfers', {
+        url: '/:userId/transfers',
+        views: {
+          '@main': { //show transfers in the main.html ui-view even though it is a child of users
+            templateUrl: 'app/main/transfer/transfer.html',
+            controller: 'TransferController',
+            controllerAs: 'transferController'
+          }
+        },
         data: {
           root: false,
           displayName: 'Transfers'
