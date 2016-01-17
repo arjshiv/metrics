@@ -4,7 +4,7 @@
       (<span class="eye-catcher">{{userController.users.length}}</span> total users found for candidate <span
       class="eye-catcher">{{userController.candidateName}}</span>)
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 align-right">
       <button class="btn btn-primary" ng-click="userController.addUser()"><i class="fa fa-plus"></i> Add new user</button>
       <button class="btn btn-info" ng-disabled="!userController.selectedUser" ng-click="userController.viewTransfers()"><i class="fa fa-plus"></i> View transfers for user</button>
       <button class="btn btn-danger" ng-disabled="!userController.selectedUser" ng-click="userController.addUser()"><i class="fa fa-times"></i> Delete selected user</button>

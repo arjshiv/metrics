@@ -1,1 +1,19 @@
-{{transferController.name}}
+<div class="transfer">
+  <div class="row">
+    <div class="col-md-6">
+      (<span class="eye-catcher">{{transferController.transfers.length}}</span> total transfers found for user <span class="eye-catcher">{{transferController.userId}}</span> in candidate <span
+      class="eye-catcher">{{transferController.candidateName}}</span>)
+    </div>
+    <div class="col-md-6 align-right">
+      <button class="btn btn-primary" ng-click="transferController.addTransfer()"><i class="fa fa-plus"></i> Add new transfer</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="dashboard-table-container" ng-if="transferController.transfers">
+      <div ui-grid-selection ui-grid-grouping ui-grid="transferController.gridOptions" class="dashboard-table"></div>
+    </div>
+    <div ng-if="!transferController.transfers">
+      <span class="alert alert-info">No transfers found. Please <a href="#" ng-click="transferController.addTransfer()">add transfers</a> for this user</span>
+    </div>
+  </div>
+</div>
