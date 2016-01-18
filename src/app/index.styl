@@ -33,11 +33,10 @@ body
       padding 0 2em
 
 .eye-catcher
-  color #37634a
+  color #333
   font-weight bold
 
 .subtitle
-  color #37634a
   padding 0.5em 0
 
 .dashboard-table
@@ -67,6 +66,21 @@ body
 .modal
   .row
     padding 1em 0
+
+.breadcrumb
+  padding 10px
+  background-color rgba(0, 0, 0, 0.7)
+  font-size 1.3em
+  li
+    a, span
+      transition 0.2s linear all
+      color white
+      text-decoration none
+      &:hover
+        color #8af7a1
+    &.active
+      span
+        color #8af7a1
 
 body
   > [uib-modal-window]:not([modal-render])

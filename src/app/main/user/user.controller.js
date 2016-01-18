@@ -6,7 +6,7 @@
     .controller('UserController', UserController);
 
   /** @ngInject */
-  function UserController(users, $state, candidateName, UserFactory, $uibModal, $log, toastr) {
+  function UserController(users, $state, candidateName, UserFactory, $uibModal, $log, toastr, uiGridConstants) {
     var vm = this;
     vm.users = users;
     vm.candidateName = candidateName;
@@ -21,6 +21,8 @@
       enableFiltering: true,
       enableRowSelection: true,
       enableFullRowSelection: true,
+      enableHorizontalScrollbar: uiGridConstants.scrollbars.NEVER,
+      enableVerticalScrollbar: uiGridConstants.scrollbars.WHEN_NEEDED,
       multiSelect: false, //one user at a time
       onRegisterApi: function(api) {
         vm.gridApi = api;
@@ -49,8 +51,12 @@
       });
 
       modalInstance.result.then(function (createdUser) {
-        vm.users.push(createdUser);
-        toastr.success('Successfully created new user!');
+        vm.users.unshift(createdUser);
+        if (vm.gridApi) {
+          vm.gridApi.grid.modifyRows(vm.gridOptions.data);
+          vm.gridApi.selection.clearSelectedRows();
+          vm.gridApi.selection.selectRow(vm.gridOptions.data[0]);
+        }
       }, function () {
         $log.info('Modal dismissed at: ' + new Date());
       });
