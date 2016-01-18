@@ -1,5 +1,7 @@
 .navbar
-  background-color rgba(0, 0, 0, 0.7)
+  background-color white
+  color rgba(0, 0, 0, 0.6)
+  border-top 0.3em solid #0098ff
   .breadcrumb
     position absolute
     top 0
@@ -16,13 +18,22 @@
         margin 0 0.3em
       a
         transition 0.2s linear all
-        color white
+        color rgba(0, 0, 0, 0.6)
         text-decoration none
         &:hover
           font-weight bold
       &.active
         span
-          color white
+          color rgba(0, 0, 0, 0.6)
           font-weight bold
+
+.navbar-brand
+  font-size 1.5em
+  max-height 1.5em
+  .fa
+    color #0098ff
+
+.navbar-static-top
+  margin 0
 
 

@@ -25,7 +25,7 @@
       "        <div uib-typeahead-match index=\"$index\" match=\"match\" query=\"query\" template-url=\"templateUrl\"></div>\n" +
       "    </li>\n" +
       "<hr></hr>" +
-      "<li ng-click=\"\" role=\"option\"><div uib-typeahead-match index=\"-200\" match=\"{label: 'Cant find your result ? Add a new candidate!'}\" template-url=\"templateUrl\"></div></li>\n" +
+      "<li ng-click=\"\" role=\"option\"><div uib-typeahead-match index=\"-200\" match=\"{label: 'Cant find your result ? Add a new candidate using the add candidate button.'}\" template-url=\"templateUrl\"></div></li>\n" +
       "</ul>\n" +
       "");
   }]);

@@ -97,7 +97,7 @@
         var indexToDelete = _.findIndex(vm.users, function(u) {
           return u.id === vm.selectedUser.id
         });
-        if (indexToDelete > 0) {
+        if (indexToDelete >= 0) {
           vm.users.splice(indexToDelete, 1);
         }
         if (vm.gridApi) {
