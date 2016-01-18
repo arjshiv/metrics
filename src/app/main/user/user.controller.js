@@ -12,6 +12,22 @@
     vm.candidateName = candidateName;
     vm.selectedUser = undefined;
 
+    vm.introOptions = {
+      steps: [
+        {
+          intro: 'This is the user screen. Here, you can look through user data for a candidate and take actions on specific users.'
+        },
+        {
+          intro: 'Use the table to search, sort, group and aggregate users. The icons on the table headers help you access these functions. Select a user by clicking on the specific row.',
+          element: '#user-table-container'
+        },
+        {
+          intro: 'You can take user-specific actions from this row. Add a user at any time, and select a user to view their transactios or delete them.',
+          element: '#user-action-button-row'
+        }
+      ]
+    };
+
     /**
      * UI Grid options for the user table
      * @type {{data: [], enableFiltering: boolean, enableRowSelection: boolean, enableFullRowSelection: boolean}}
