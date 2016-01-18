@@ -12,6 +12,22 @@
     vm.userId = userId;
     vm.candidateName = candidateName;
 
+    vm.introOptions = {
+      steps: [
+        {
+          intro: 'This is the transfer screen. Here, you can look through and add transfer data for a user.'
+        },
+        {
+          intro: 'You can add transfers from this row at any time. If the current user doesn\'t have transfers, start here!',
+          element: '#transfer-action-button-row'
+        },
+        {
+          intro: 'Once you have transfers for a user, they are tabulated here. You can Use the table to search, sort, group and aggregate transfers. The icons on the table headers help you access these functions.',
+          element: '#transfer-table-container'
+        }
+      ]
+    };
+
     /**
      * UI Grid options for the user table
      * @type {{data: [], enableFiltering: boolean, enableRowSelection: boolean, enableFullRowSelection: boolean}}

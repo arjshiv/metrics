@@ -17,12 +17,12 @@
           intro: 'Welcome to the Admin Dashboard. With this application you can manage all your candidates, users and transfers!'
         },
         {
-          intro: 'Start by selecting a candidate',
+          intro: 'Start by selecting a candidate. Once selected, hit enter or the Go! button.',
           element: '#selectCandidate'
         },
         {
-          intro: 'You can also start with a fresh new namespace by creating a candidate',
-          element: '#createCandidate'
+          intro: 'You can use this row to move forward with the selected candidate using Go!, or start with a fresh new namespace by creating a candidate',
+          element: '#candidate-action-button-row'
         }
       ]
     };

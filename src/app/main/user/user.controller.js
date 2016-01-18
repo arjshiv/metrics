@@ -15,7 +15,7 @@
     vm.introOptions = {
       steps: [
         {
-          intro: 'This is the user screen. Here, you can look through user data for a candidate and take actions on specific users.'
+          intro: 'This is the user screen. Here, you can look through and add user data for a candidate and take actions on specific users.'
         },
         {
           intro: 'Use the table to search, sort, group and aggregate users. The icons on the table headers help you access these functions. Select a user by clicking on the specific row.',
