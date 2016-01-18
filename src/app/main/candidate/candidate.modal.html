@@ -10,7 +10,7 @@
 <div class="modal-footer">
   <span ng-if="candidateModal.success === false" class="alert alert-warning pull-left">{{candidateModal.errorMessage}}. Please try again</span>
   <span class="fa fa-spinner fa-spin" ng-if="candidateModal.loading"></span>
-  <button class="btn btn-primary" ng-click="$event.preventDefault(); candidateModal.createCandidate();" ng-disabled="!candidateModal.isValid()" type="button">OK</button>
-  <button class="btn btn-warning" ng-click="$event.preventDefault(); candidateModal.close()" type="button">Cancel</button>
+  <button class="btn btn-primary" ng-click="$event.preventDefault(); $event.stopPropagation();  candidateModal.createCandidate();" ng-disabled="!candidateModal.isValid()" type="button">OK</button>
+  <button class="btn btn-warning" ng-click="$event.preventDefault(); $event.stopPropagation();  candidateModal.close()" type="button">Cancel</button>
 </div>
 
