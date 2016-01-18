@@ -39,7 +39,7 @@
           displayName: 'Candidates'
         },
         ncyBreadcrumb: {
-          label: 'Candidates'
+          label: 'Candidates' + '{{candidateController.candidateName ? " (" + candidateController.candidateName + ")" : ""}}'
         },
         resolve: {
 					/**
@@ -63,7 +63,7 @@
         },
         ncyBreadcrumb: {
           parent: 'main.candidates',
-          label: 'Users'
+          label: 'Users' + '{{userController.selectedUser ? " (" + userController.selectedUser.id + ")" : ""}}'
         },
         resolve: {
 					/**
