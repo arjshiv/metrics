@@ -11,6 +11,22 @@
     vm.candidates = candidates;
     initializeCandidate();
 
+    vm.introOptions = {
+      steps: [
+        {
+          intro: 'Welcome to the Admin Dashboard. With this application you can manage all your candidates, users and transfers!'
+        },
+        {
+          intro: 'Start by selecting a candidate',
+          element: '#selectCandidate'
+        },
+        {
+          intro: 'You can also start with a fresh new namespace by creating a candidate',
+          element: '#createCandidate'
+        }
+      ]
+    };
+
 		/**
      * On selection, update URL with the selected candidate
      * Else, remove selection

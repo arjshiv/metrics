@@ -1,14 +1,17 @@
-<div id="candidate">
+<div id="candidate" ng-intro-options="candidateController.introOptions" ng-intro-method="startIntro">
   <div class="row">
-    <div class="col-md-12"><h3 class="subtitle"><i class="fa fa-users"></i> Candidates</h3></div>
+    <div class="col-md-6"><h3 class="subtitle"><i class="fa fa-users"></i> Candidates</h3></div>
+    <div class="col-md-6 align-right">
+      <button class="btn btn-sm btn-info" ng-click="startIntro();"><i class="fa fa-info circle"> Help</i></button>
+    </div>
   </div>
   <form ng-submit="candidateController.onSubmit()">
     <div class="row">
       <div class="col-md-3">
         <b>Select a candidate</b>
       </div>
-      <div class="col-md-6">
-        <input type="text" ng-model="candidateController.candidateName"
+      <div class="col-md-9">
+        <input id="selectCandidate" type="text" ng-model="candidateController.candidateName"
             typeahead-on-select="candidateController.onSelect()"
             placeholder="Start typing..."
             uib-typeahead="candidate for candidate in candidateController.candidates | filter:$viewValue | limitTo:8 "
@@ -21,10 +24,11 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-9 align-right">
-        <button class="btn btn-default" type="button" ng-click="$event.preventDefault(); candidateController.createCandidate();"><i class="fa fa-plus"></i> Add new candidate</button>
-        <button class="btn btn-primary" type="submit" ng-disabled="!candidateController.candidateName">Go!
-        </button>
+      <div class="col-md-6">
+        <button class="btn btn-default" type="button" id="createCandidate" ng-click="$event.preventDefault(); candidateController.createCandidate();"><i class="fa fa-plus"></i> Add a new candidate!</button>
+      </div>
+      <div class="col-md-6 align-right">
+        <button class="btn btn-primary" type="submit" ng-disabled="!candidateController.candidateName">Go!</button>
       </div>
     </div>
   </form>
