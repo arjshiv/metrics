@@ -6,7 +6,7 @@
     .controller('CandidateController', CandidateController);
 
   /** @ngInject */
-  function CandidateController(candidates, $state, $stateParams, Store, $uibModal) {
+  function CandidateController(candidates, $state, $stateParams, Store, $uibModal, $log) {
     var vm = this;
     vm.candidates = candidates;
     initializeCandidate();

@@ -75,7 +75,7 @@ gulp.task('fonts', function () {
   return gulp.src($.mainBowerFiles().concat('bower_components/bootstrap-stylus/fonts/*'))
     .pipe($.filter('**/*.{eot,svg,ttf,woff,woff2}'))
     .pipe($.flatten())
-    .pipe(gulp.dest(path.join(conf.paths.dist, '/fonts/')));
+    .pipe(gulp.dest(path.join(conf.paths.dist, '/styles/')));
 });
 
 gulp.task('other', function () {
