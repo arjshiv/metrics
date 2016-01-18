@@ -15,6 +15,7 @@
     $stateProvider
       .state('main', {
         url: '/main',
+        auth: false,
         templateUrl: 'app/main/main.html',
         controller: 'MainController',
         controllerAs: 'mainController',
@@ -26,8 +27,22 @@
           skip: true
         }
       })
+      .state('main.login', {
+        url: '/login',
+        templateUrl: 'app/main/login/login.html',
+        controller: 'LoginController',
+        controllerAs: 'loginController',
+        auth: false,
+        data: {
+          root: false
+        },
+        ncyBreadcrumb: {
+          label: 'Login'
+        }
+      })
       .state('main.candidates', {
         url: '/candidates/:candidateName',
+        auth: true,
         params: {
           candidateName: {value: null, squash: true}
         },
@@ -57,6 +72,7 @@
         templateUrl: 'app/main/user/user.html',
         controller: 'UserController',
         controllerAs: 'userController',
+        auth: true,
         data: {
           root: false,
           displayName: 'Users'
@@ -86,6 +102,7 @@
       })
       .state('main.users.transfers', {
         url: '/:userId/transfers',
+        auth: true,
         views: {
           '@main': { //show transfers in the main.html ui-view even though it is a child of users
             templateUrl: 'app/main/transfer/transfer.html',
