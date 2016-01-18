@@ -32,10 +32,10 @@
         url: parameters.url
       };
 
-      if ((requestObject.method === 'GET') && (parameters.hasOwnProperty('params'))) {
-        requestObject.params = parameters.params;
-      } else {
+      if ((requestObject.method === 'POST') && (parameters.hasOwnProperty('data'))) {
         requestObject.data = angular.toJson(parameters.data);
+      } else { //GET or DELETE
+        requestObject.params = parameters.params;
       }
       return $http(requestObject).then(_successHandler, _failureHandler);
     }

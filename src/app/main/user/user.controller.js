@@ -6,7 +6,7 @@
     .controller('UserController', UserController);
 
   /** @ngInject */
-  function UserController(users, $state, candidateName, UserFactory, $uibModal, $log, toastr, uiGridConstants) {
+  function UserController(users, $state, candidateName, $uibModal, $log, uiGridConstants, _) {
     var vm = this;
     vm.users = users;
     vm.candidateName = candidateName;
@@ -63,11 +63,34 @@
     };
 
     /**
-     * Stub
-     * Delete a user
+     * Delete a user - confirm with modal
      */
     vm.deleteUser = function deleteUser() {
-      UserFactory.deleteUser().then();
+      var modalInstance = $uibModal.open({
+        animation: true,
+        templateUrl: 'app/main/user/user.delete.modal.html',
+        controller: 'UserDeleteModalController as userDeleteModal',
+        resolve: {
+          user: function() {
+            return vm.selectedUser;
+          }
+        }
+      });
+
+      modalInstance.result.then(function () {
+        var indexToDelete = _.findIndex(vm.users, function(u) {
+          return u.id === vm.selectedUser.id
+        });
+        if (indexToDelete > 0) {
+          vm.users.splice(indexToDelete, 1);
+        }
+        if (vm.gridApi) {
+          vm.gridApi.grid.modifyRows(vm.gridOptions.data);
+          vm.gridApi.selection.clearSelectedRows();
+        }
+      }, function () {
+        $log.info('Modal dismissed at: ' + new Date());
+      });
     };
 
     vm.viewTransfers = function viewTransfers() {

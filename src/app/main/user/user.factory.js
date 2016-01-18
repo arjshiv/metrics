@@ -82,9 +82,9 @@
      */
     function deleteUser(parameters) {
       return RestFactory.makeRequest({
-        url: userUrl,
-        method: 'POST',
-        data: parameters
+        url: userUrl + '/' + parameters.userId,
+        method: 'DELETE',
+        params: parameters
       });
     }
 
