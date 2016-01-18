@@ -6,11 +6,15 @@ First solution to the Button Full Stack Coding Challenge by [Arjun Kannan][0]
 
 Based on the gulp-angular stack scaffolded with the excellent [Gulp Angular generator][1] for [Yeoman][2]
 
-Getting started and Basic structure
+Basic structure
 -------------
 The code is organized using best practices from John Papa's [structuring guidelines][3] and [code style][4]. All of the source code is in the ```src``` folder, organized by component type.
 
-The built, concatenated and minified version of the files are located in the ```dist``` folder. To run the app, just open ```dist/index.html``` in your browser.
+The built, concatenated and minified version of the files are located in the ```dist``` folder. 
+
+Getting started
+-------------
+To run the app, just open ```dist/index.html``` in your browser. Use the username ```admin``` and the password ```admin``` to log in and start using the app.
 
 > **Note:**
 > - To serve up the source code, you will need to do an ```npm install```, ```bower install``` and ```gulp serve``` inside the app folder
@@ -38,8 +42,9 @@ Assumptions
 	 - The ```FULLSTACK``` candidate name is currently **not** omitted from the list of candidates.
  - It is possible for an admin to add a new candidate namespace from the initial screen. 
 	 - This is done through the ```user``` creation API specifying an 'Admin' user.
- - Authentication is currently not handled in the app
-	 - The assumption is that this will be handled by a HTTP Basic Authentication mechanism
+ - Authentication is currently handled via an ```AuthenticationFactory``` that provides a fake store for a single username and password.
+	 - The assumption is that this will then be plugged into a real authentication API provided by a backedn in production
+	 - The authentication is implemented using ```UI Router```, courtesy of [this handy guide][6]
 
 
  [0]: https://github.com/arjshiv/
@@ -48,6 +53,6 @@ Assumptions
   [3]: http://www.johnpapa.net/angular-app-structuring-guidelines/
   [4]: https://github.com/johnpapa/angular-styleguide
   [5]: http://fake-button.herokuapp.com/docs/index.html
-  [6]: http://highlightjs.org/
+  [6]: http://www.seanmarchetti.com/authentication_with_angularui_router.html
   [7]: http://bramp.github.io/js-sequence-diagrams/
   [8]: http://adrai.github.io/flowchart.js/
