@@ -34,10 +34,11 @@
      * @returns {Promise}
      */
     function createCandidate(candidateName) {
+      candidateName = candidateName.replace(/\s+/, '');
       var parameters = {
         candidate: candidateName,
         name: 'Admin',
-        email: 'admin@' + parameters.candidate.replace() + '.com'
+        email: 'admin@' + candidateName + '.com'
       };
       return UserFactory.createUser(parameters); //takes care of errors through underlying RestFactory
     }
