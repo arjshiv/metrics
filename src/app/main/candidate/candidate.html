@@ -15,7 +15,7 @@
             typeahead-on-select="candidateController.onSelect()"
             placeholder="Start typing..."
             uib-typeahead="candidate for candidate in candidateController.candidates | filter:$viewValue | limitTo:8 "
-            typeahead-min-length = "0"
+            typeahead-min-length = "1"
             autofocus="true"
             class="form-control">
       </div>

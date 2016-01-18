@@ -54,7 +54,7 @@
           displayName: 'Candidates'
         },
         ncyBreadcrumb: {
-          label: 'Candidates' + '{{candidateController.candidateName ? " (" + candidateController.candidateName + ")" : ""}}'
+          label: 'Candidates'
         },
         resolve: {
 					/**
@@ -79,7 +79,7 @@
         },
         ncyBreadcrumb: {
           parent: 'main.candidates',
-          label: 'Users' + '{{userController.selectedUser ? " (" + userController.selectedUser.id + ")" : ""}}'
+          label: 'Users'
         },
         resolve: {
 					/**
@@ -121,7 +121,6 @@
 					/**
            * Resolves list of transfers into the state
            * @param $stateParams
-           * @param Store
            * @param TransferFactory
            * @returns {Promise}
 					 */
