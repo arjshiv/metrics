@@ -1,14 +1,19 @@
 <div class="transfer">
   <div class="row">
-    <div class="col-md-12"><h3 class="subtitle"><i class="fa fa-exchange"></i> Transfers</h3></div>
+    <div class="col-md-6"><h3 class="subtitle"><i class="fa fa-exchange"></i> Transfers</h3></div>
+    <div class="col-md-6 align-right">
+      <button class="btn btn-primary" ng-click="transferController.addTransfer()"><i class="fa fa-plus"></i> Add new transfer</button>
+    </div>
   </div>
   <div class="row">
     <div class="col-md-6">
       (<span class="eye-catcher">{{transferController.transfers.length}}</span> total transfers found for user <span class="eye-catcher">{{transferController.userId}}</span> in candidate <span
       class="eye-catcher">{{transferController.candidateName}}</span>)
     </div>
-    <div class="col-md-6 align-right">
-      <button class="btn btn-primary" ng-click="transferController.addTransfer()"><i class="fa fa-plus"></i> Add new transfer</button>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      Use the table to group, pivot and search through transfers.
     </div>
   </div>
   <div class="row">
