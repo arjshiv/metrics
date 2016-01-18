@@ -113,7 +113,7 @@
               candidate: $stateParams.candidateName,
               userId: $stateParams.userId
             }).then(function(response) {
-              return response.data;
+              return response.data || [];
             });
           },
           userId: function($stateParams) {
