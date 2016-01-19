@@ -3,7 +3,7 @@
  *  The list of variables are listed here bower_components/bootstrap-stylus/bootstrap/variables.styl
  */
 $navbar-inverse-link-color = #5AADBB
-$theme-blue = #0098ff
+$theme-color = rgba(0, 0, 0, 0.7)
 $icon-font-path = "../../bower_components/bootstrap-stylus/fonts/"
 
 /**
@@ -40,7 +40,7 @@ body
 
 .subtitle
   padding 0.5em 0
-  color $theme-blue
+  color $theme-color
   .fa
     color rgba(0, 0, 0, 0.7)
 
@@ -61,15 +61,20 @@ body
 .btn
   text-transform none
   &.btn-default
-    color rgba(0, 0, 0, 0.7)
+    color rgba(0, 0, 0, 0.6)
   &.btn-primary, &.btn-default, &.btn-warning, &.btn-danger, &.btn-info
+    border-color rgba(0, 0, 0, 0.2)
     background-color white
+    font-weight 300
     &:hover
       background-color white !important
       box-shadow 1px 2px 0 0 #dbdbdb
 
 .align-right, .numeric
   text-align right
+
+.modal-title
+  text-align center
 
 .modal
   .row
@@ -124,7 +129,7 @@ body
 
 .ui-grid-header {
   border: none;
-  border-bottom: 1px solid $theme-blue ;
+  border-bottom: 1px solid $theme-color ;
 }
 
 .ui-grid-header-cell {

@@ -7,7 +7,7 @@
     .factory('AuthenticationFactory', AuthenticationFactory);
 
   /** @ngInject */
-  function AuthenticationFactory() {
+  function AuthenticationFactory($cookies) {
     var loggedIn = false;
     var allowedCredentials = {
       user: 'admin',
@@ -23,8 +23,10 @@
     function logIn(user, pass) {
       if (user === allowedCredentials.user && pass === allowedCredentials.pass) {
         loggedIn = true;
+        $cookies.put('login', 'true');
       } else {
         loggedIn = false;
+        $cookies.remove('login');
       }
       return loggedIn;
     }
@@ -34,7 +36,7 @@
      * @returns {boolean}
      */
     function isLoggedIn() {
-      return loggedIn;
+      return $cookies.get('login') || loggedIn;
     }
 
     return {

@@ -14,7 +14,7 @@
     };
 
     vm.success = undefined;
-    vm.errorMessage = 'Did not recognize username and password. Please try again.';
+    vm.errorMessage = 'Incorrect username and password. Please try again.';
 
     /**
      * Log the user in!

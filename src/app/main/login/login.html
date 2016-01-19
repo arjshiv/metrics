@@ -1,7 +1,6 @@
 <form id="login" ng-submit="loginController.logIn();">
   <div class="row">
-    <div class="col-md-12 col-sm 12"><h3>Welcome to the Admin Dashboard!</h3>
-      Please log in to continue
+    <div class="col-md-12 col-sm 12"><h3>Login</h3>
     </div>
   </div>
   <hr>
@@ -14,11 +13,13 @@
     <div class="col-md-6 col-sm-6"><input ng-model="loginController.formOptions.pass" type="password" class="form-control"></div>
   </div>
   <div class="row">
-    <div class="col-md-9 col-sm 9">
-      <div ng-if="loginController.success === false" class="alert alert-warning">{{loginController.errorMessage}}</div>
+    <div class="col-md-12 col-sm-12 align-right">
+      <button ng-disabled="!loginController.isValid();" type="submit" class="btn btn-default">Log in</button>
     </div>
-    <div class="col-md-3 col-sm-3 align-right">
-      <button ng-disabled="!loginController.isValid();" type="submit" class="btn btn-primary">Log in</button>
+  </div>
+  <div class="row">
+    <div class="col-md-9 col-sm 9">
+      <div ng-if="loginController.success === false"><i class="fa fa-exclamation-triangle"></i> {{loginController.errorMessage}}</div>
     </div>
   </div>
 </form>
