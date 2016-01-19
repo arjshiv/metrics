@@ -5,8 +5,9 @@
         <span class="fa fa-database"></span> Admin Dashboard
       </a>
     </div>
-    <ul class="nav navbar-nav">
-      <li><a class="navbar-nav"></a></li>
+    <ul class="nav navbar-nav pull-right">
+      <li ng-if="vm.isLoggedIn();"><a class="navbar-nav navbar-button" ui-sref="main.login"><i class="fa fa-lock"></i> Logout</a></li>
+      <li ng-if="!vm.isLoggedIn();"><a class="navbar-nav" ui-sref="main.login"><i class="fa fa-unlock"></i> Login</a></li>
     </ul>
   </div>
 </nav>

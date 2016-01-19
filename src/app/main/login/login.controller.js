@@ -8,6 +8,7 @@
   /** @ngInject */
   function LoginController(AuthenticationFactory, $state) {
     var vm = this;
+    AuthenticationFactory.logOut();
     vm.formOptions = {
       user: 'admin',
       pass: ''

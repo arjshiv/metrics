@@ -25,8 +25,7 @@
         loggedIn = true;
         $cookies.put('login', 'true');
       } else {
-        loggedIn = false;
-        $cookies.remove('login');
+        logOut();
       }
       return loggedIn;
     }
@@ -39,9 +38,18 @@
       return $cookies.get('login') || loggedIn;
     }
 
+    /**
+     * Log out
+     */
+    function logOut() {
+      loggedIn = false;
+      $cookies.remove('login');
+    }
+
     return {
       logIn: logIn,
-      isLoggedIn: isLoggedIn
+      isLoggedIn: isLoggedIn,
+      logOut: logOut
     };
   }
 

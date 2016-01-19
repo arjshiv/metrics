@@ -21,8 +21,10 @@
     return directive;
 
     /** @ngInject */
-    function NavbarController() {
-
+    function NavbarController(AuthenticationFactory) {
+      var vm = this;
+      vm.isLoggedIn = AuthenticationFactory.isLoggedIn;
+      vm.logout = AuthenticationFactory.logout;
     }
   }
 
