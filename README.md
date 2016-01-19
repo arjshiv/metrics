@@ -45,6 +45,8 @@ Assumptions
  - Authentication is currently handled via an ```AuthenticationFactory``` that provides a fake store for a single username and password.
 	 - The assumption is that this will then be plugged into a real authentication API provided by a backedn in production
 	 - The authentication is implemented using ```UI Router```, courtesy of [this handy guide][6]
+	 - Cookies are used to store authentication state using the ```$cookie``` service
+ - A full screen desktop use case is assumed for the optimal use case. The app is responsive but not optimized for the mobile use case
 
 
  [0]: https://github.com/arjshiv/
