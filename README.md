@@ -1,8 +1,8 @@
-Button Full Stack Coding Challenge
+Coding Challenge
 ============================
 
 
-First solution to the Button Full Stack Coding Challenge by [Arjun Kannan][0]
+First solution to a Coding Challenge by [Arjun Kannan][0]
 
 Based on the gulp-angular stack scaffolded with the excellent [Gulp Angular generator][1] for [Yeoman][2]
 
